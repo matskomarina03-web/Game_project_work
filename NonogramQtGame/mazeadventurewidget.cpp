@@ -15,10 +15,6 @@
 #include <QMessageBox>
 #include <QStackedLayout>
 #include <QScrollArea>
-// =========================
-// PREVIEW WIDGET
-// =========================
-
 
 MazeAdventureWidget::MazeAdventureWidget(QWidget *parent)
     : QWidget(parent)
@@ -112,10 +108,6 @@ void MazePreviewWidget::paintEvent(QPaintEvent *)
     p.drawText(rect(), Qt::AlignCenter, "Лабіринт");
 }
 
-// =========================
-// SCHEME PREVIEW
-// =========================
-
 MazeSchemePreviewWidget::MazeSchemePreviewWidget(const MazeLevel &level, QWidget *parent)
     : QWidget(parent), m_level(level)
 {
@@ -150,9 +142,6 @@ void MazeSchemePreviewWidget::paintEvent(QPaintEvent *)
     }
 }
 
-// =========================
-// GAME VIEW
-// =========================
 
 MazeGameView::MazeGameView(QWidget *parent)
     : QWidget(parent)
@@ -224,7 +213,7 @@ void MazeGameView::drawMiniMap(QPainter &p)
     int ox = width() - mapW * cell - 12;
     int oy = 12;
 
-    // фон
+
     p.setPen(Qt::NoPen);
     p.setBrush(QColor(0, 0, 0, 40));
     p.drawRoundedRect(
@@ -250,7 +239,6 @@ void MazeGameView::drawMiniMap(QPainter &p)
         }
     }
 
-    // player
     QRect player(
         ox + m_playerCell.x() * cell,
         oy + m_playerCell.y() * cell,
@@ -273,33 +261,23 @@ void MazeGameView::paintEvent(QPaintEvent *)
             QRect r(x * size, y * size, size, size);
 
             if (m_level.rows[y][x] == '#')
-                p.fillRect(r, QColor(209, 213, 219)); // світлі стіни
+                p.fillRect(r, QColor(209, 213, 219));
 
             if (m_level.rows[y][x] == 'E')
-                p.fillRect(r, QColor(34, 197, 94));   // зелений фініш
+                p.fillRect(r, QColor(34, 197, 94)); 
         }
     }
 
-    // player
     QRect player(
         m_playerCell.x() * size,
         m_playerCell.y() * size,
         size, size
         );
 
-    p.fillRect(player, QColor(59, 130, 246)); // синій гравець
+    p.fillRect(player, QColor(59, 130, 246)); 
 
     drawMiniMap(p);
 }
-
-// =========================
-// MAIN WIDGET
-// =========================
-
-
-// =========================
-// LOAD JSON LEVELS
-// =========================
 
 QVector<MazeLevel> MazeAdventureWidget::loadMazeLevels() const
 {
@@ -328,10 +306,6 @@ QVector<MazeLevel> MazeAdventureWidget::loadMazeLevels() const
     return levels;
 }
 
-// =========================
-// LEVEL MENU
-// =========================
-
 void MazeAdventureWidget::buildLevelSelection()
 {
     m_levels = loadMazeLevels();
@@ -358,9 +332,6 @@ void MazeAdventureWidget::buildLevelSelection()
     layout->setContentsMargins(12, 12, 12, 12);
     layout->setSpacing(16);
 
-    // =========================
-    // HEADER (DRAWN, NO IMAGE)
-    // =========================
     QWidget *header = new QWidget();
     header->setFixedHeight(160);
 
@@ -396,10 +367,6 @@ void MazeAdventureWidget::buildLevelSelection()
     layout->addSpacing(12);
 
 
-
-    // =========================
-    // EXIT BUTTON (BACK TO NONOGRAM)
-    // =========================
     auto *exitBtn = new QPushButton("← Back to Nonogram");
     exitBtn->setFixedHeight(40);
     exitBtn->setCursor(Qt::PointingHandCursor);
@@ -423,14 +390,9 @@ void MazeAdventureWidget::buildLevelSelection()
     layout->addWidget(exitBtn);
     layout->addSpacing(12);
 
-    // =========================
-    // UNLOCK LOGIC
-    // =========================
+
     int unlocked = qMin(m_progress.unlockedMazeLevel, m_levels.size());
 
-    // =========================
-    // GRID
-    // =========================
 
     QWidget *gridContainer = new QWidget();
     auto gridLayout = new QGridLayout(gridContainer);
@@ -487,18 +449,12 @@ void MazeAdventureWidget::buildLevelSelection()
     }
 )");
 
-    // =========================
-    // STACK HANDLING
-    // =========================
     if (m_stack->indexOf(m_levelPage) == -1)
         m_stack->addWidget(m_levelPage);
 
     m_stack->setCurrentWidget(m_levelPage);
 }
 
-// =========================
-// CARD UI
-// =========================
 
 QFrame *MazeAdventureWidget::createLevelCard(int level, bool unlocked)
 {
@@ -522,7 +478,6 @@ QFrame *MazeAdventureWidget::createLevelCard(int level, bool unlocked)
     title->setStyleSheet("font-weight: bold; color:#111827;");
     layout->addWidget(title);
 
-    // preview
     auto *previewFrame = new QFrame;
     previewFrame->setFixedHeight(120);
     previewFrame->setStyleSheet("background:#f9fafb; border-radius:10px;");
@@ -560,9 +515,6 @@ QFrame *MazeAdventureWidget::createLevelCard(int level, bool unlocked)
 
     return card;
 }
-// =========================
-// START LEVEL
-// =========================
 
 void MazeAdventureWidget::startLevel(int level)
 {
@@ -581,9 +533,6 @@ void MazeAdventureWidget::startLevel(int level)
     m_stack->setCurrentWidget(m_gamePage);
 }
 
-// =========================
-// FINISH LEVEL + SAVE
-// =========================
 
 void MazeAdventureWidget::finishCurrentLevel()
 {
