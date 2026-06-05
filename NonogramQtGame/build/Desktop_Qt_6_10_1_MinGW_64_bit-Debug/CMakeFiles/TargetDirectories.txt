@@ -1,0 +1,8 @@
+C:/Users/Lenovo/NonogramQtGame/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/CMakeFiles/NonogramGame.dir
+C:/Users/Lenovo/NonogramQtGame/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/CMakeFiles/GameValidatorTests.dir
+C:/Users/Lenovo/NonogramQtGame/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Lenovo/NonogramQtGame/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Lenovo/NonogramQtGame/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/CMakeFiles/NonogramGame_autogen_timestamp_deps.dir
+C:/Users/Lenovo/NonogramQtGame/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/CMakeFiles/NonogramGame_autogen.dir
+C:/Users/Lenovo/NonogramQtGame/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/CMakeFiles/GameValidatorTests_autogen_timestamp_deps.dir
+C:/Users/Lenovo/NonogramQtGame/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/CMakeFiles/GameValidatorTests_autogen.dir

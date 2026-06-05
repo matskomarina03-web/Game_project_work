@@ -1,0 +1,6 @@
+set(__QT_DEPLOY_TARGET_NonogramGame_FILE C:/Users/Lenovo/NonogramQtGame/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/NonogramGame.exe)
+set(__QT_DEPLOY_TARGET_NonogramGame_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_NonogramGame_RUNTIME_DLLS C:/Qt/6.10.1/mingw_64/bin/Qt6Widgets.dll;C:/Qt/6.10.1/mingw_64/bin/Qt6Gui.dll;C:/Qt/6.10.1/mingw_64/bin/Qt6Core.dll)
+set(__QT_DEPLOY_TARGET_GameValidatorTests_FILE C:/Users/Lenovo/NonogramQtGame/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/GameValidatorTests.exe)
+set(__QT_DEPLOY_TARGET_GameValidatorTests_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_GameValidatorTests_RUNTIME_DLLS C:/Qt/6.10.1/mingw_64/bin/Qt6Test.dll;C:/Qt/6.10.1/mingw_64/bin/Qt6Core.dll)
